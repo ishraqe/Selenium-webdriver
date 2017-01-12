@@ -12,10 +12,13 @@ public class variousLocatiors {
 		//https://github.com/mozilla/geckodriver/releases download the latest gecodriver
 		
 		System.setProperty("webdriver.gecko.driver", "/home/ish/geckodriver");	
-	//System.setProperty("webdriver.chrome.driver",  "/home/ish/chromedriver");
+
 		
 		WebDriver driver =new FirefoxDriver();
-		driver.get("https://www.facebook.com/");
+		
+		String baseUrl="https://www.facebook.com/";
+		driver.get(baseUrl);
+		driver.manage().window().maximize(); //maximizes the window
 		
 		System.out.println(driver.getTitle());
 		
@@ -42,7 +45,11 @@ public class variousLocatiors {
 		    
 		 */
 		
-		
+		if (baseUrl== driver.getCurrentUrl()) {
+			System.out.println("matched");
+		}else{
+			System.out.println("didn't matched");
+		}
 		
 		
 		driver.findElement(By.xpath(".//*[@id='loginbutton']")).click();
