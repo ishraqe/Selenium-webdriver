@@ -1,23 +1,37 @@
 package LocatingObjects;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class navigate {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "/home/ish/chromedriver");	
-		WebDriver driver =new ChromeDriver();
-		String baseUrl="https://www.google.com/";
-		driver.get(baseUrl);
+		System.setProperty("webdriver.gecko.driver", "/home/ish/geckodriver");	
 		
-		String fb="https://www.facebook.com/";
+		DesiredCapabilities capabilities=DesiredCapabilities.firefox();
+		capabilities.setCapability("marionette", true);
 		
-		driver.navigate().to(fb);
+		try {
+			WebDriver driver =new FirefoxDriver();
+			String baseUrl="https://www.google.com/";
+			driver.get(baseUrl);
+			
+			String fb="https://www.facebook.com/";
+			
+			driver.navigate().to(fb);
+			
+			driver.navigate().back();//goes to google
+			
+			driver.navigate().forward();//fb
+			Thread.sleep(1800);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
-		driver.navigate().back();//goes to google
 		
-		driver.navigate().forward();//fb
+	
 		
 
 	}
