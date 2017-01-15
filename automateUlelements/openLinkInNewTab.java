@@ -26,8 +26,8 @@ public class openLinkInNewTab {
 		 * opens new empty tab
 		 * 
 		 */
-		String selectEmptyLinkOpeninNewTab = Keys.chord(Keys.CONTROL,"t");
-		driver.findElement(By.linkText("Services")).sendKeys(selectEmptyLinkOpeninNewTab);
+//		String selectEmptyLinkOpeninNewTab = Keys.chord(Keys.CONTROL,"t");
+//		driver.findElement(By.linkText("Services")).sendKeys(selectEmptyLinkOpeninNewTab);
 	}
 
 }

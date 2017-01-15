@@ -25,6 +25,7 @@ public class navigate {
 			driver.navigate().back();//goes to google
 			
 			driver.navigate().forward();//fb
+			driver.navigate().refresh();
 			Thread.sleep(1800);
 		} catch (Exception e) {
 			System.out.println(e);
