@@ -60,7 +60,7 @@ public class ReadandWriteExcel {
 			wb.write(fout);
 
 			// close the file
-			wb.close();
+			
 			fout.close();
 			
 		 } catch (Exception e) {
